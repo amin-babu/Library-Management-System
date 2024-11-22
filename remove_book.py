@@ -1,12 +1,13 @@
-from save_all_books import save_all_books
+import save_book_list
 
-def remove_book(all_books):
-  isbn = int(input('Enter the ISBN of the book to remove: '))
-  for book in all_books:
+def delet_book(book_list):
+  isbn = int(input('Enter the Book ISBN : '))
+  for book in book_list:
     if book['isbn'] == isbn:
-      all_books.remove(book)
-      save_all_books(all_books)
-      print('Book removed successfully.')
-      return all_books
-  print('Book not found!')
-  return all_books
+      book_list.remove(book)
+      save_book_list.save_books(book_list)
+      print('Book Removed Successfully')
+      return book_list
+  
+  print('No Book Found')
+  return book_list
